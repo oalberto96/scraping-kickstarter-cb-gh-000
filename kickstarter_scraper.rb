@@ -17,7 +17,7 @@ def create_project_hash
       :location => html_project.css(".location-name").text.strip,
       :percent_funded => html_project.css(".funded").css("strong").text.strip
     }
-    result[:projects][html_project.css(".bbcard_name").css("a").text.strip] = project
+    result[:projects][html_project.css(".bbcard_name").css("a").text.strip.to_sym] = project
     if i == 0
       binding.pry
       i+=1
