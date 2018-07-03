@@ -19,4 +19,5 @@ def create_project_hash
     result[html_project.css(".bbcard_name").css("a").text.strip] = project
   end
   puts result
+  result
 end
