@@ -9,12 +9,7 @@ def create_project_hash
   }
   html = File.read("./fixtures/kickstarter.html")
   kickstarter = Nokogiri::HTML(html)
-  i = 0
   kickstarter.css(".project").each do |html_project|
-    if i == 0
-      binding.pry
-      i+=1
-    end
     project = {
       :image_link => html_project.css(".project-thumbnail").css("img").first['src'],
       :description => html_project.css(".bbcard_blurb").text.strip,
