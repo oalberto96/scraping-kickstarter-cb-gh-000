@@ -17,7 +17,6 @@ def create_project_hash
       :percent_funded => html_project.css(".funded").css("strong").text.strip
     }
     result[:projects][html_project.css(".bbcard_name").css("a").text.strip.to_sym] = project
-
   end
   result
 end
