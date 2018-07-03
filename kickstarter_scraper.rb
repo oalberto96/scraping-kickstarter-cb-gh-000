@@ -16,8 +16,7 @@ def create_project_hash
       :location => html_project.css(".location-name").text.strip,
       :percent_funded => html_project.css(".funded").css("strong").text.strip
     }
-    result[html_project.css(".bbcard_name").css("a").text.strip] = project
+    result[:projects][html_project.css(".bbcard_name").css("a").text.strip] = project
   end
-  puts result
   result
 end
