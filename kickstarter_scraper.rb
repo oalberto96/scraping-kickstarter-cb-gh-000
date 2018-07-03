@@ -19,9 +19,9 @@ def create_project_hash
       :image_link => html_project.css(".project-thumbnail").css("a").first['href'],
       :description => html_project.css(".bbcard_blurb").text.strip,
       :location => html_project.css(".location-name").text.strip,
-      :percent_funded => html_project.css(".funded").css("strong").text
+      :percent_funded => html_project.css(".funded").css("strong").text.strip
     }
-    result[html_project.css(".bbcard_name").css("a").text] = project
+    result[html_project.css(".bbcard_name").css("a").text.strip] = project
   end
   puts result
 
