@@ -4,9 +4,7 @@ require 'pry'
 
 def create_project_hash
   # write your code here
-  result = {
-    :projects => {}
-  }
+  result = {}
   html = File.read("./fixtures/kickstarter.html")
   kickstarter = Nokogiri::HTML(html)
   kickstarter.css(".project").each do |html_project|
